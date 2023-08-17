@@ -33,7 +33,7 @@ fi
 
 SUDO=sudo
 if [ "$(id -u)" -eq 0 ]; then
-  SUDO=sudo
+  SUDO=
 fi
 
 verify_system() {

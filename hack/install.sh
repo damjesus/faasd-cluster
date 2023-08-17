@@ -32,7 +32,7 @@ fi
 
 SUDO=sudo-g5k
 if [ "$(id -u)" -eq 0 ]; then
-  SUDO=sudo-g5k
+  SUDO=
 fi
 
 verify_system() {

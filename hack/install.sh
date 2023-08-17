@@ -30,9 +30,9 @@ if [ ! $version ]; then
   exit 1
 fi
 
-SUDO=sudo
+SUDO=sudo-g5k
 if [ "$(id -u)" -eq 0 ]; then
-  SUDO=
+  SUDO=sudo-g5k
 fi
 
 verify_system() {
@@ -60,13 +60,13 @@ install_required_packages() {
     # other distros. Hence, adding only to this block.
     # reference: https://github.com/openfaas/faasd/pull/237
     $SUDO apt-get update -y
-    $SUDO apt-get install -y curl runc bridge-utils iptables
+    $SUDO apt-get install -y runc bridge-utils iptables
   elif $(has_yum); then
     $SUDO yum check-update -y
-    $SUDO yum install -y curl runc iptables-services
+    $SUDO yum install -y runc iptables-services
   elif $(has_pacman); then
     $SUDO pacman -Syy
-    $SUDO pacman -Sy curl runc bridge-utils
+    $SUDO pacman -Sy runc bridge-utils
   else
     fatal "Could not find apt-get, yum, or pacman. Cannot install dependencies on this OS."
     exit 1

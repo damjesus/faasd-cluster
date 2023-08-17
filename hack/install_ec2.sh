@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Copyright OpenFaaS Author(s) 2022
